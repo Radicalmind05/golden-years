@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Vault</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=DM+Mono:wght@300;400&amp;display=swap" rel="stylesheet">
 <style>
 :root {
   --ink: #1a1814;
@@ -618,21 +616,21 @@ button:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
 <!-- ════════════════════════════════
      SCREEN: ENTRY
 ════════════════════════════════ -->
-<div id="s-entry" class="screen active">
+<div id="s-entry" class="screen">
   <div style="text-align:center; padding-top:3rem;">
-    <div class="vault-lock">&#9775;</div>
+    <div class="vault-lock">☯</div>
     <h1 style="margin-bottom:0.5rem;">The Vault</h1>
     <p style="font-size:0.9rem; color:var(--ink3); letter-spacing:0.06em; font-style:italic; margin-bottom:3rem;">something was left here, just for you</p>
     <div style="max-width:280px; margin:0 auto;">
       <button class="btn-primary" style="width:100%;" onclick="attemptEntry()">Begin</button>
     </div>
-    <a class="mode-link" onclick="showBuilderAuth()">&#9998; builder</a>
+    <a class="mode-link" onclick="showBuilderAuth()">✎ builder</a>
   </div>
 </div>
 
 <!-- AUDIO PLAYER (persistent across levels) -->
 <div id="audio-player">
-  <button id="audio-play-btn" onclick="toggleAudio()">&#9654;</button>
+  <button id="audio-play-btn" onclick="toggleAudio()">▶</button>
   <div class="audio-label">now playing: <span id="audio-song-name">—</span></div>
   <div id="audio-progress-wrap" onclick="seekAudio(event)">
     <div id="audio-progress-bar"></div>
@@ -654,8 +652,7 @@ button:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
     <div class="riddle-text" id="l1-riddle"></div>
     <div class="hint-text" id="l1-hint"></div>
     <div class="field">
-      <input type="text" id="l1-answer" placeholder="your answer..." autocomplete="off"
-        onkeydown="if(event.key==='Enter')checkLevel1()" />
+      <input type="text" id="l1-answer" placeholder="your answer..." autocomplete="off" onkeydown="if(event.key==='Enter')checkLevel1()">
       <div class="err" id="l1-err"></div>
     </div>
     <button class="btn-primary" onclick="checkLevel1()">Submit</button>
@@ -711,7 +708,7 @@ button:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
     <div class="env-wrap" onclick="openEnvelope()">
       <div class="env-body">
         <div class="env-flap" id="env-flap"></div>
-        <div class="env-seal" id="env-seal">&#10022;</div>
+        <div class="env-seal" id="env-seal">✦</div>
         <div class="env-letter" id="env-letter">
           <div class="env-letter-lines">
             <div id="ell-1"></div>
@@ -731,7 +728,7 @@ button:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
 ════════════════════════════════ -->
 <div id="s-final" class="screen">
   <div style="text-align:center; margin-bottom:2rem;">
-    <div class="ornament float">&#10022; &#10022; &#10022;</div>
+    <div class="ornament float">✦ ✦ ✦</div>
     <h2 id="final-heading"></h2>
     <p style="font-size:0.85rem; color:var(--ink3); font-style:italic; margin-top:4px;" id="final-sub"></p>
   </div>
@@ -752,13 +749,12 @@ button:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
   <div style="max-width:260px; margin:0 auto;">
     <div class="field" style="position:relative; z-index:10;">
       <label for="builder-pw">Builder Password</label>
-      <input type="password" id="builder-pw" placeholder="password..."
-        onkeydown="if(event.key==='Enter')checkBuilderPw()" style="position:relative; z-index:10;" />
+      <input type="password" id="builder-pw" placeholder="password..." onkeydown="if(event.key==='Enter')checkBuilderPw()" style="position:relative; z-index:10;">
       <div class="err" id="bpw-err"></div>
     </div>
     <button class="btn-primary" style="width:100%; position:relative; z-index:10;" onclick="checkBuilderPw()">Enter Builder</button>
     <div style="text-align:center; margin-top:1rem; position:relative; z-index:10;">
-      <button class="btn-ghost btn-sm" onclick="show('s-entry')">&#8592; back</button>
+      <button class="btn-ghost btn-sm" onclick="show('s-entry')">← back</button>
     </div>
   </div>
 </div>
@@ -771,7 +767,7 @@ button:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
     <h2 style="font-size:1.1rem;">Builder</h2>
     <div style="display:flex; gap:8px;">
       <button class="btn-gold btn-sm" onclick="showExport()">Export game</button>
-      <button class="btn-ghost btn-sm" onclick="show('s-entry')">&#8592; exit</button>
+      <button class="btn-ghost btn-sm" onclick="show('s-entry')">← exit</button>
     </div>
   </div>
   <div class="card" style="margin-bottom:1.25rem;">
@@ -781,10 +777,24 @@ button:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
     </div>
   </div>
   <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:0.75rem;">
-    <div style="font-family:var(--mono); font-size:0.68rem; color:var(--ink3); letter-spacing:0.1em;">FRIENDS (<span id="friend-count">0</span>)</div>
+    <div style="font-family:var(--mono); font-size:0.68rem; color:var(--ink3); letter-spacing:0.1em;">FRIENDS (<span id="friend-count">2</span>)</div>
     <button class="btn-ghost btn-sm" onclick="addFriend()">+ add friend</button>
   </div>
-  <div class="builder-steps" id="friend-list"></div>
+  <div class="builder-steps" id="friend-list">
+      <div class="friend-row" onclick="editFriend(0)">
+        <div>
+          <div class="friend-row-name">Manasa</div>
+          <div class="friend-row-meta">PANI PURI &nbsp;·&nbsp; 5 levels</div>
+        </div>
+        <div style="color:var(--ink3);font-size:1.2rem;">›</div>
+      </div>
+      <div class="friend-row" onclick="editFriend(1)">
+        <div>
+          <div class="friend-row-name">Ji</div>
+          <div class="friend-row-meta">RUDRAKSHA &nbsp;·&nbsp; 4 levels</div>
+        </div>
+        <div style="color:var(--ink3);font-size:1.2rem;">›</div>
+      </div></div>
   <div id="no-friends" style="text-align:center; padding:2rem; color:var(--ink3); font-style:italic; font-size:0.9rem; display:none;">No friends added yet. Click "+ add friend" to begin.</div>
 </div>
 
@@ -798,11 +808,11 @@ button:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
   </div>
   <div class="field">
     <label>riddle title</label>
-    <input type="text" id="el1-title" placeholder="e.g. Before you go further..." />
+    <input type="text" id="el1-title" placeholder="e.g. Before you go further...">
   </div>
   <div class="field">
     <label>riddle subtitle / flavour text</label>
-    <input type="text" id="el1-subtitle" placeholder="e.g. only you would know this" />
+    <input type="text" id="el1-subtitle" placeholder="e.g. only you would know this">
   </div>
   <div class="field">
     <label>riddle text (shown to player)</label>
@@ -810,7 +820,7 @@ button:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
   </div>
   <div class="field">
     <label>hint (optional)</label>
-    <input type="text" id="el1-hint" placeholder="a gentle nudge..." />
+    <input type="text" id="el1-hint" placeholder="a gentle nudge...">
   </div>
   <p style="font-size:0.82rem; color:var(--ink3); font-style:italic; margin-bottom:1rem;">Each friend's personal word (set in their profile) will be checked as the correct answer. The backup is their display name.</p>
   <button class="btn-primary" onclick="saveLevel1()">Save shared riddle</button>
@@ -824,17 +834,17 @@ button:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
     <h2 style="font-size:1.1rem;" id="ef-heading">Friend</h2>
     <div style="display:flex;gap:8px;">
       <button class="btn-ghost btn-sm" onclick="saveFriend()">Save</button>
-      <button class="btn-ghost btn-sm" onclick="show('s-builder-home')">&#8592;</button>
+      <button class="btn-ghost btn-sm" onclick="show('s-builder-home')">←</button>
     </div>
   </div>
   <div class="card" style="margin-bottom:1.25rem;">
     <div class="field">
       <label>display name</label>
-      <input type="text" id="ef-name" placeholder="Priya" />
+      <input type="text" id="ef-name" placeholder="Priya">
     </div>
     <div class="field">
       <label>their personal word (level 1 answer + track key)</label>
-      <input type="text" id="ef-word" placeholder="e.g. MONSOON, or an inside word" />
+      <input type="text" id="ef-word" placeholder="e.g. MONSOON, or an inside word">
     </div>
     <div class="field">
       <label>opening message (shown after level 1)</label>
@@ -842,25 +852,25 @@ button:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
     </div>
     <div class="field">
       <label>level 5 minigame theme (describes falling objects)</label>
-      <input type="text" id="ef-mg-theme" placeholder="e.g. stars, fireflies, snowflakes, paper planes" />
+      <input type="text" id="ef-mg-theme" placeholder="e.g. stars, fireflies, snowflakes, paper planes">
     </div>
     <div class="field">
       <label>level 5 title</label>
-      <input type="text" id="ef-mg-title" placeholder="e.g. The night sky remembers" />
+      <input type="text" id="ef-mg-title" placeholder="e.g. The night sky remembers">
     </div>
     <div class="field">
       <label>level 5 memory context</label>
-      <input type="text" id="ef-mg-memory" placeholder="e.g. That roof we sat on, August 2023" />
+      <input type="text" id="ef-mg-memory" placeholder="e.g. That roof we sat on, August 2023">
     </div>
     <div style="background:var(--paper3);border-radius:8px;padding:1rem;margin-bottom:0.5rem;">
       <div style="font-family:var(--mono);font-size:0.65rem;color:var(--ink3);letter-spacing:0.1em;margin-bottom:0.75rem;">SONG FOR LEVEL 5 (optional)</div>
       <div class="field" style="margin-bottom:0.75rem;">
         <label>song URL</label>
-        <input type="text" id="ef-mg-songurl" placeholder="https://example.com/song.mp3" />
+        <input type="text" id="ef-mg-songurl" placeholder="https://example.com/song.mp3">
       </div>
       <div class="field" style="margin-bottom:0;">
         <label>song display name</label>
-        <input type="text" id="ef-mg-songname" placeholder="e.g. the song we danced to" />
+        <input type="text" id="ef-mg-songname" placeholder="e.g. the song we danced to">
       </div>
     </div>
   </div>
@@ -886,12 +896,16 @@ button:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
 <!-- ════════════════════════════════
      SCREEN: EXPORT
 ════════════════════════════════ -->
-<div id="s-export" class="screen">
+<div id="s-export" class="screen active">
   <div class="builder-nav">
     <h2 style="font-size:1.1rem;">Export</h2>
-    <button class="btn-ghost btn-sm" onclick="show('s-builder-home')">&#8592; back</button>
+    <button class="btn-ghost btn-sm" onclick="show('s-builder-home')">← back</button>
   </div>
-  <div class="export-box" id="export-stats"></div>
+  <div class="export-box" id="export-stats">
+    <div class="export-stat"><span class="export-key">friends</span><span class="export-val">2</span></div>
+    <div class="export-stat"><span class="export-key">total levels</span><span class="export-val">11</span></div>
+    <div class="export-stat"><span class="export-key">words set</span><span class="export-val">2 / 2</span></div>
+    <div class="export-stat"><span class="export-key">letters written</span><span class="export-val">2 / 2</span></div></div>
   <p style="font-size:0.85rem; color:var(--ink2); margin-bottom:1.25rem; line-height:1.7;">This will download a single <code style="font-family:var(--mono);font-size:0.8rem;">vault.html</code> file with all your friend data baked in. Upload it to GitHub Pages and share the URL.</p>
   <button class="btn-gold" style="width:100%;" onclick="downloadGame()">Download vault.html</button>
   <div class="ok" id="export-ok" style="text-align:center; margin-top:8px;"></div>
@@ -913,30 +927,10 @@ button:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
 // STATE
 // ════════════════════════════════════════════════
 const BUILDER_PASSWORD = "mygift2025";
-
-let gameData = {
-  level1: {
-    title: "Before you go further",
-    subtitle: "only you would know this",
-    riddle: "I have no body, no voice, no face — yet between us, I mean a place, a night, a feeling no one else could trace. What am I?",
-    hint: "Think of that one word that's just ours."
-  },
-  friends: []
-};
-
 let currentFriend = null;
-let currentFriendIdx = -1;
-let currentLevelIdx = 0;
-let editingFriendIdx = -1;
-let currentLevelTab = 2;
-let mgInterval = null;
-let mgCaught = 0;
-let mgTarget = 10;
-let mgParticles = [];
-let mgAnimFrame = null;
-let envelopeOpened = false;
 
-// Try load from localStorage
+let gameData = {"level1":{"title":"Before you go further","subtitle":"only you would know this","riddle":"What's one thing that you like the most?","hint":"Remember what you said recently"},"friends":[{"name":"Manasa","word":"PANI PURI","intro":"To the one who's warm and funny\n(Wherever you see the play button, press it)","levels":[{"type":"riddle","title":"Where it all began","memory":"Red Building, 2022","riddle":"Shy souls were tested,\nBright souls enjoyed.\nA western morning ritual,\nDisguised in a fancy name.\nWhere did it happen?","fragment":"Saw you dance once, became a fan forever","songUrl":"Mallipoo_spotdown.org.mp3","songName":"I had to take the lead here","hint":"I saw you here, you didn't","answer":"zumba class"},{"type":"riddle","title":"Voiced a bit harder?","memory":"Blue Shed, 2023 (ig so)","riddle":"In a slip of tongue, a legend woke;\nAn extra 'o' that made a running joke.\nUnder the blue, something happened.\nWhat was that event called?","fragment":"The sportiveness and enthusiasm that you show in anything, even when trying something new...I'm always impressed by that.","songUrl":"Enna Sona_spotdown.org.mp3","songName":"Enna sonna? (ik spelling mistake)","hint":"You hate it when it is mentioned","answer":"can you hear me"},{"type":"scramble","title":"Maybe something less?","memory":"Pages from a tale you loved","riddle":"A habit that's not always free,\nYour's saw a twisted family tree.\nSomething that means everything in the world,\nDoesn't mean anything to the couple in this tale.\nWhat is the name of this tale?","fragment":"When you shared your favourite lines with me, with excitement, I felt special.","songUrl":"blue_spotdown.org.mp3","songName":"Feels like blue","scrambleAnswer":"powerless"},{"type":"scramble","title":"Secret for three years","memory":"Hidden in plain sight","riddle":"This hid from us,\nNot behind you, but in front.\nIt took three computer brains and two humans to be figured out.","fragment":"The moment we found your full name, I was happy not because I could make fun of you, but because I got to know you a bit more.","songUrl":"Our Cycle_spotdown.org.mp3","songName":"Truly a Meiyazhagan moment","scrambleAnswer":"buchineni"},{"type":"memory","title":"Game of chances","memory":"Minutes before dept farewell hit hard","riddle":"Red, Black and Joker","fragment":"When I thought \"college life is about to end, nothing more to learn here\", you taught me rummy. You taught me ways to enjoy life with the simplest efforts. ","songUrl":"Maname_spotdown.org.mp3","songName":"I picked this song. DON'T ASK WHY","memoryEmojis":"♠️,♥️,♦️,♣️,🃏"}],"letter":"Oi puncher😂\nThe best one in the gang naan adhu nee thaan nu naan kanna mooditu solluven. Unnoda level of innocence, the way you express yourself without hesitation, adhellam enaku romba pudikum. Literally nee oru kid maathiri thaan pannitu irupa😂 which is kinda cute. \nEnaku romba nalla gnabagam iruku, the first day we met. Not officially 😂, but naan unna paatha first time was in that zumba class. Appo andha zumba class la irundhu girls laye nee thaan konjam azhaga irundha (idha solliten ndrathukaaga scene podaatha😂) but adhanaala nu illa, you looked interesting for some reason. Adhukaagave enaku unkita pesanum nu aasai appo. Aana andha time la naan boys kitaye naane poitu approach panni pesa maaten😂, idhula oru ponnu kita epdi nu yosichite, vittuten. Nee dance panni naan appo mattum thaan nalla paathen, that was the first time but I became a fan seriously. Garbha songs ku nee oru green dress la aaduva, adhula that keezha umbrella cut aa ennadhunu therila, adhu azhaga round aa poitu vara maathiri suthi suthi graceful aa aaduva. Enaku adha paakurappove romba nalla irukum. I remember break time la kooda nee Ranjithame song ku andha akkas kooda aaditu irundha😂 I don't have much memories of u after that. Aana unna neraya vaati paakurappo pesanumnu nenaichiruken, but pesunadhu illa. Same, thayakkam. Slowly but steadily naan improve aagitu irundhen. Oru naal unna paathu edho oru counter poten, aana nee casual aa ignore pannitu poita😂. That was the first thing I ever spoke to u nu nenaikiren. Andha week eh u brought veg biriyani. Appo thaan I felt, beach thanni la irukura salt evlo kammi nu😂 but nee thaan enaku those telugu-style influence irukura food ah introduce panni vecha. I'm forever grateful for that 🙇 (as I said unna vida unga amma seira sora naan romba miss pannuven🤧)\nAprom English mam oda poitu CEG canteen la lunch saptadhu gnabagam iruku. Adhukaprom I have no clue what happened. We became so close. Therinjo theriyaamalo enaku unna romba pudika aarambichudhu, for your character. Unkita mattum oru secret solren. Enaku second year varaikum namma purple Akshaya mela oru crush irundhuchu🫣 appo Moni frnd aa irundhaa, so ava kita ellame sollitu irupen. Ava solluvaa, Akshaya va vida Manasa thaan azhaga irukaa nu. 😂I never accepted (initially) yeana naan andha time la unna sariya notice pannala nu thaan sollanum. Appo irundha crush la naan vera edhaiyum perusa paakala yosikala. But eppo andha crush pocho, appo sudden aa, random aa oru naal Moni sonnadhu unmai nu naan realize pannen. U r beautiful in your own way. (Looks-wise and character-wise) I saw u as a great human being. \nNee kudukura expressions, use pandra slang, appapo use pandra telugu words. 😂Enaku innumum nee pesura telugu epdi enaku puriyidhunu idea ve illa.\nSo moral of the story is, enaku unna romba pudikum. You're a very nice, kind and beautiful soul. \nEverytime I miss a placement drive, nee enkita vandhu sogama irukiya nu kepa, aarudhal soluva. Apdiye pazhagi pazhagi enaku enna nadandhaalum unkita thaan polambanum pola irukum ippo laam. \nEppome nee unaku munnadi mathavangala vechi paapa. That's a very rare quality nowadays. Enaku adha paakurappo romba aachiryama irukum. Like that day when u said \"ennaala Lokesh photo va miss pannitan\" and those days when we travelled in your car, \"main gate la vitta avanga avlodhooram nadandhu ponum la\" even when you know that kottur road la traffic adhigama irukum nu. Those times just melt my heart. Romba warm aa irukum heart full aa. You're so kind and appapo childish but semma mature in necessary matters. \nYou became my fidget toy as time passed, unnoda busubusu mandai😂, kaiya thooki potu vilaiyaduradhu😂 ellam fun aa irukum. But sorry if those made u uncomfortable. Ennoda love language eh touch thaan. Enaku yaara romba pudikudho avangala nondite irupen😂😅. \nNee bangalore po, madhepura po, enga vena po. I'll be your super good friend always. Unaku eppo enna venumnalum, vendam naalum, I'm just oru text or call away. When u cried, I wanted to cry too, ik crying makes u feel better, oru relief kedaikum thaan. But. I love to see u smile. Idha padikirappo nee azhaama irundha nalla irukum, but knowing u, i think nee indha para laye azha aarambichalum aarambichirupa😅\nNaan unna maari extrovert aa, open minded aa irukanumnu aasai padren, rombave. I'm soooooooooooo glad and grateful to god (or whatever that exists above, if it exists) that I met u. I'll be your dearest friend. Always giving my shoulder for you to punch❤️ (which I expect you will do if I'm near u by the time u read this😂)\nUnaku naan oru suggestion kudukanum na, neraya vaati neeye solliruka, nee sila vishayangal maathikanumnu nenaikira nu laam. Konjam porumaiya, suthi muthi paathutu pesuradhu idhellam paathukuta nalladhu thaan😂 but, don't hesitate to do what u want, just be yourself and think more for yourself. \nThis is definitely not the end, we are just entering another chapter. \nLoads of luck, love and laughter from Raghavan❤️ to the one who kept the gang lively and colourful.","mgTheme":"flowers","mgTitle":"Neem flowers","mgMemory":"Whenever I see neem flowers, I think of you.","mgSongUrl":"Zaalima_spotdown.org.mp3","mgSongName":"Just sounds good."},{"name":"Ji","word":"RUDRAKSHA","intro":"To the impulsive and curious one\n(Wherever you see the play button, press it)","levels":[{"type":"cipher","title":"Secret Photographer","memory":"Back in 2022","riddle":"I took a picture of you here, from behind.","fragment":"You are a person with a good sense of style. The way you present yourself is impressive always.","songUrl":"","songName":"","cipherWord":"GALLERY","cipherMap":{"✌️":"Y","😃":"E","☺️":"L","🌚":"G","😸":"R","🦋":"A"},"cipherSyms":["✌️","😃","☺️","🌚","😸","🦋"]},{"type":"riddle","title":"Quality dance","memory":"Vivek Audi, about 2 years ago.","riddle":"A perfect chance, \nFor an imperfect dance.\nSomething I feared, \nYet the crowd cheered. \nNo choreo, no grooves,\nJust surely unsure moves.\nWhat colour were they?","fragment":"I had so many doubts when you pushed me to dance back then. But today, I'm glad you did. That makes one great memory.","songUrl":"","songName":"","hint":"You don't like that colour on me.","answer":"red"},{"type":"scramble","title":"Judging???","memory":"We literally judged people!","riddle":"In teams they came,\nBarely knew our name.\nWe neither know their game,\nNor wanted fame.\nTravelled three districts,\nTo get to this university.\nWhat was it called?","fragment":"We spent a day there, judging and giving marks to projects of a level that we didn't even know. Yet the day was fun-filled and happy, not because of the work, but because of the company.","songUrl":"","songName":"","scrambleAnswer":"saveetha"},{"type":"emoji","title":"Heart out","memory":"Something you kept motivating me to do","riddle":"Which emoji represents something you (most) encouraged me to do? \nHint: Stories","fragment":"My podcast wasn't a great success. Yet you motivated me. That kept my fire going. It will be resumed soon. It's a promise.","songUrl":"","songName":"","emojiOptions":"🎙️,✒️,🏃‍♂️,💪🏼","emojiCorrect":1}],"letter":"Hi ji! Ji here. \nThis isn't a farewell note. It's more like, what I feel about u, what I felt about u throughout our journey in these 4 years. \nIdk when I entered your life but u entered mine on day one of college itself. You fell that day, I still remember that pacha chudi of yours. Class intervals la, free hours la laam appapo I used to sit around in random places clg la. Apdi thaan oru naal I saw u in the gallery. \nYeannu therila ji, you were always interesting to me. Yes, I had a crush wayyyy back. But adhu romba shortlived, we became more than that. We became friends. \nYou always had that impulsive energy with u. That's one of the things I like about u. I generally like bold girls, and you are the boldest I've ever seen. I remember a lot of things about us, the plans we made right from pradosham annaiku paal kudikiradhu to banana milkshake cart all the way up to the japan plans. I hope we find our ways to japan in the future. That little dance we did on the stage, poorest performance in the biggest auditorium with our confidence to the fullest😂 And that day we went to saveetha clg was another happy day to remember✨\nI do feel like we had an unfairly short time to spend together in these 4 years. You're one of the people that I wish I had met earlier. Let's be in touch forever ji✨ I'll keep u updated with my life, hoping to hear your story, no matter how often or seldom we speak. If I wanted to give you a suggestion, I'd say, sometimes exercise patience ji. Idk why I'm saying this, but nee sila samayam konjam slow down aaninaa, innum nalla irukumnu enaku thonudhu. So if you feel the same way, try it. This is just another end, just another beginning. Thanks for the moments we made together and the moments you helped me shine ji. And sorry, if I had done anything that might have been unpleasant or uncomfortable to u ji. You're always welcome to do another episode in my podcast, anytime✨✨✨\nLots of love, luck and cheers from your ji❤️","mgTheme":"dogs","mgTitle":"Tempered","mgMemory":"That day we went to change my phone's tempered glass and had snacks. Small budget, big memory.","mgSongUrl":"","mgSongName":""}]};
+
 try {
   const saved = localStorage.getItem('vaultData');
   if (saved) gameData = JSON.parse(saved);
@@ -952,6 +946,7 @@ function save() {
 function playLevelSong(songUrl, songLabel) {
   const audio = document.getElementById('bg-audio');
   const player = document.getElementById('audio-player');
+  const btn = document.getElementById('audio-play-btn');
   if (!songUrl) { stopAudio(); return; }
   // Only reload if URL changed — preserve playback across level transitions
   if (audio.getAttribute('data-loaded') !== songUrl) {
@@ -962,12 +957,17 @@ function playLevelSong(songUrl, songLabel) {
     audio.load();
     audio.setAttribute('data-loaded', songUrl);
     document.getElementById('audio-progress-bar').style.width = '0%';
-    document.getElementById('audio-play-btn').innerHTML = '&#9654;';
+    
+    // Attempt to autoplay since the user has interacted with the page
+    const p = audio.play();
+    if (p !== undefined) {
+      p.then(() => { btn.innerHTML = '&#9646;&#9646;'; }).catch(() => { btn.innerHTML = '&#9654;'; });
+    } else {
+      btn.innerHTML = '&#9654;';
+    }
   }
   document.getElementById('audio-song-name').textContent = songLabel || decodeURIComponent(songUrl.split('/').pop()) || 'song';
   player.classList.add('visible');
-  // Don't call audio.play() here — browser blocks it without user gesture
-  // Player shows as paused; user taps ▶ to start
 }
 function stopAudio() {
   const audio = document.getElementById('bg-audio');
@@ -1033,13 +1033,8 @@ function buildProgressTrack(trackId, totalLevels, activeLevel) {
 // ENTRY
 // ════════════════════════════════════════════════
 function attemptEntry() {
-  // Since there is no word input anymore, we just use the first friend setup.
-  // If no friends have been built yet, we use a fallback empty friend.
-  if (gameData.friends && gameData.friends.length > 0) {
-    currentFriend = gameData.friends[0];
-  } else {
-    currentFriend = { name: 'Player', word: '', intro: '', levels: [], letter: '' };
-  }
+  // We simply move the user to the shared riddle screen now
+  // We won't strictly assign a friend yet until they guess the word
   currentLevelIdx = 1;
   loadLevel1();
 }
@@ -1061,9 +1056,22 @@ function loadLevel1() {
 
 function checkLevel1() {
   const val = document.getElementById('l1-answer').value.trim().toUpperCase();
-  const word = (currentFriend.word || '').toUpperCase();
-  const name = (currentFriend.name || '').toUpperCase();
-  if (val === word || val === name || (word && val.includes(word)) || (name && val.includes(name))) {
+  let foundFriend = null;
+
+  // Search through ALL friends to see if the inputted word matches any of them
+  for (let f of gameData.friends) {
+    const word = (f.word || '').toUpperCase();
+    const name = (f.name || '').toUpperCase();
+    
+    if (val === word || val === name || (word && val.includes(word)) || (name && val.includes(name))) {
+      foundFriend = f;
+      break;
+    }
+  }
+
+  if (foundFriend) {
+    // We found a match! Assign this friend and proceed to their unique levels
+    currentFriend = foundFriend;
     currentLevelIdx = 2;
     loadPersonalLevel(0);
   } else {
@@ -1409,6 +1417,7 @@ function loadLevel5() {
   document.getElementById('l5-memory').textContent = f.mgMemory || '';
   buildProgressTrack('progress-track5', totalAll, totalAll);
   mgCaught = 0;
+  mgTarget = 10;
   mgParticles = [];
   envelopeOpened = false;
   document.getElementById('l5-actions').innerHTML = '';
@@ -1420,7 +1429,7 @@ function loadLevel5() {
 }
 
 function startMinigame() {
-  if (mgAnimFrame) cancelAnimationFrame(mgAnimFrame);
+  if (typeof mgAnimFrame !== 'undefined') cancelAnimationFrame(mgAnimFrame);
   const canvas = document.getElementById('mg-canvas');
   const ctx = canvas.getContext('2d');
   const W = canvas.width, H = canvas.height;
@@ -1651,32 +1660,6 @@ function saveLevel1() {
 // ════════════════════════════════════════════════
 // EDIT FRIEND
 // ════════════════════════════════════════════════
-function editFriend(idx) {
-  editingFriendIdx = idx;
-  const f = gameData.friends[idx];
-  document.getElementById('ef-heading').textContent = f.name || 'New Friend';
-  document.getElementById('ef-name').value = f.name || '';
-  document.getElementById('ef-word').value = f.word || '';
-  document.getElementById('ef-intro').value = f.intro || '';
-  document.getElementById('ef-mg-theme').value = f.mgTheme || 'stars';
-  document.getElementById('ef-mg-title').value = f.mgTitle || '';
-  document.getElementById('ef-mg-memory').value = f.mgMemory || '';
-  document.getElementById('ef-mg-songurl').value = f.mgSongUrl || '';
-  document.getElementById('ef-mg-songname').value = f.mgSongName || '';
-  document.getElementById('ef-letter').value = f.letter || '';
-  if (!f.levels || f.levels.length < 3) f.levels = [{},{},{}];
-  renderLevelPanels(f.levels);
-  switchLvlTab(2);
-  show('s-edit-friend');
-}
-
-// ════════════════════════════════════════════════
-// BUILDER — DYNAMIC LEVEL LIST
-// ════════════════════════════════════════════════
-
-// editingLevels holds the live copy while editing
-let editingLevels = [];
-
 function editFriend(idx) {
   editingFriendIdx = idx;
   const f = gameData.friends[idx];
@@ -1923,5 +1906,5 @@ function cipherMapToText(map) { if (!map) return ''; return Object.entries(map).
 function parseCipherMap(text) { const m={}; text.split('\n').forEach(l=>{ const[k,v]=l.split('='); if(k&&v) m[k.trim()]=v.trim().toUpperCase(); }); return m; }
 function tfToText(stmts, answers) { if (!stmts) return ''; return stmts.map((s,i)=>`${s}|${answers[i]?'true':'false'}`).join('\n'); }
 </script>
-</body>
-</html>
+
+</body></html>
