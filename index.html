@@ -1883,7 +1883,17 @@ function showExport() {
 
 function downloadGame() {
   const data = JSON.stringify(gameData);
+  
+  // Temporarily set the entry screen as active before capturing HTML
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById('s-entry').classList.add('active');
+  document.getElementById('export-ok').textContent = ''; // Clear the success text
+  
   const src = document.documentElement.outerHTML;
+  
+  // Restore the export screen as active for the user
+  document.getElementById('s-entry').classList.remove('active');
+  document.getElementById('s-export').classList.add('active');
   
   const regex = /let gameData = [\s\S]*?;(?=\s*try\s*\{)/;
   
